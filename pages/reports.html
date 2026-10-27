@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Báo cáo & thống kê | IMEX Manager</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="app-layout">
+    <aside class="sidebar">
+      <div class="logo">
+        <span class="logo-mark">IM</span>
+        <span>IMEX Manager</span>
+      </div>
+
+      <nav class="sidebar-nav" aria-label="Điều hướng chính">
+        <a href="../index.html"><span aria-hidden="true">▦</span> Dashboard</a>
+        <a href="orders.html"><span aria-hidden="true">▤</span> Quản lý đơn hàng</a>
+        <a href="shipments.html"><span aria-hidden="true">⇢</span> Quản lý lô hàng</a>
+        <a href="partners.html"><span aria-hidden="true">♧</span> Quản lý đối tác</a>
+        <a class="active" href="reports.html"><span aria-hidden="true">▥</span> Báo cáo & thống kê</a>
+      </nav>
+
+      <div class="divider"></div>
+      <a class="nav-link" href="../login.html"><span aria-hidden="true">↪</span> Đăng xuất</a>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div>
+          <strong>Báo cáo & thống kê</strong>
+          <p class="mb-0">Phân tích hoạt động xuất nhập khẩu theo thời gian</p>
+        </div>
+
+        <div class="user-profile">
+          <div class="avatar">AD</div>
+          <div>
+            <strong>Admin</strong>
+            <div class="muted">Quản trị viên</div>
+          </div>
+        </div>
+      </header>
+
+      <section class="page-header">
+        <div>
+          <h1>Báo cáo & thống kê</h1>
+          <p>Tập trung tổng hợp biểu đồ số liệu và xuất dữ liệu báo cáo.</p>
+        </div>
+
+        <div class="d-flex gap-1">
+          <button class="btn btn-secondary" type="button">In báo cáo</button>
+          <button class="btn btn-primary" type="button">Xuất CSV</button>
+        </div>
+      </section>
+
+      <section class="card mb-2">
+        <div class="card-header">
+          <h2>Bộ lọc báo cáo</h2>
+        </div>
+
+        <form action="#report-results" method="get">
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="from-date">Từ ngày</label>
+              <input id="from-date" name="from-date" type="date">
+            </div>
+
+            <div class="form-group">
+              <label for="to-date">Đến ngày</label>
+              <input id="to-date" name="to-date" type="date">
+            </div>
+
+            <div class="form-group">
+              <label for="report-type">Loại đơn hàng</label>
+              <select id="report-type" name="report-type">
+                <option value="all">Tất cả</option>
+                <option value="export">Xuất khẩu</option>
+                <option value="import">Nhập khẩu</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="report-status">Trạng thái</label>
+              <select id="report-status" name="report-status">
+                <option value="all">Tất cả trạng thái</option>
+                <option value="completed">Hoàn thành</option>
+                <option value="processing">Đang xử lý</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button class="btn btn-secondary" type="reset">Đặt lại</button>
+            <button class="btn btn-primary" type="submit">Áp dụng bộ lọc</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="content-grid">
+        <article class="report-card">
+          <div class="card-header">
+            <h2>Giá trị xuất nhập khẩu theo tháng</h2>
+          </div>
+          <div class="chart-placeholder">
+            <p><strong>Biểu đồ cột mẫu</strong></p>
+            <div class="table-container">
+              <table>
+                <thead>
+                  <tr>
+                    <th scope="col">Tháng</th>
+                    <th scope="col">Xuất khẩu</th>
+                    <th scope="col">Nhập khẩu</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Tháng 9</td>
+                    <td>580 triệu ₫</td>
+                    <td>310 triệu ₫</td>
+                  </tr>
+                  <tr>
+                    <td>Tháng 10</td>
+                    <td>840 triệu ₫</td>
+                    <td>425 triệu ₫</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </article>
+
+        <article class="report-card">
+          <div class="card-header">
+            <h2>Ghi chú nghiệp vụ</h2>
+          </div>
+          <p>Giá trị xuất khẩu và nhập khẩu được thống kê riêng biệt để quản lý dòng tiền chính xác.</p>
+          <div class="divider"></div>
+          <div class="d-flex align-center justify-between">
+            <span>Tổng giá trị xuất khẩu</span>
+            <strong class="text-primary">5,72 tỷ ₫</strong>
+          </div>
+          <div class="divider"></div>
+          <div class="d-flex align-center justify-between">
+            <span>Tổng giá trị nhập khẩu</span>
+            <strong class="text-primary">2,74 tỷ ₫</strong>
+          </div>
+        </article>
+      </section>
+    </main>
+  </div>
+  <script src="../js/app.js" defer></script>
+</body>
+</html>

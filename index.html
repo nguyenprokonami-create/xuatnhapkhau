@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard | IMEX Manager</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="app-layout">
+    <aside class="sidebar">
+      <div class="logo">
+        <span class="logo-mark">IM</span>
+        <span>IMEX Manager</span>
+      </div>
+
+      <nav class="sidebar-nav" aria-label="Điều hướng chính">
+        <a class="active" href="index.html"><span aria-hidden="true">▦</span> Dashboard</a>
+        <a href="pages/orders.html"><span aria-hidden="true">▤</span> Quản lý đơn hàng</a>
+        <a href="pages/shipments.html"><span aria-hidden="true">⇢</span> Quản lý lô hàng</a>
+        <a href="pages/partners.html"><span aria-hidden="true">♧</span> Quản lý đối tác</a>
+        <a href="pages/reports.html"><span aria-hidden="true">▥</span> Báo cáo & thống kê</a>
+      </nav>
+
+      <div class="divider"></div>
+      <a class="nav-link" href="login.html"><span aria-hidden="true">↪</span> Đăng xuất</a>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div>
+          <strong>Tổng quan hệ thống</strong>
+          <p class="mb-0">Hệ thống điều hành xuất nhập khẩu IMEX Manager</p>
+        </div>
+
+        <div class="user-profile">
+          <div class="avatar">AD</div>
+          <div>
+            <strong>Admin</strong>
+            <div class="muted">Quản trị viên</div>
+          </div>
+        </div>
+      </header>
+
+      <section class="page-header">
+        <div>
+          <h1>Dashboard</h1>
+          <p>Theo dõi chỉ số nhanh và truy cập các khu vực quản lý nghiệp vụ.</p>
+        </div>
+      </section>
+
+      <section class="stats-grid" aria-label="Thống kê tổng quan">
+        <article class="stat-card">
+          <span class="label">Tổng đơn hàng</span>
+          <strong class="value">128</strong>
+        </article>
+
+        <article class="stat-card">
+          <span class="label">Lô hàng vận chuyển</span>
+          <strong class="value">18</strong>
+        </article>
+
+        <article class="stat-card">
+          <span class="label">Đối tác doanh nghiệp</span>
+          <strong class="value">64</strong>
+        </article>
+
+        <article class="stat-card">
+          <span class="label">Tổng giá trị xuất khẩu</span>
+          <strong class="value">5,72 tỷ ₫</strong>
+        </article>
+      </section>
+
+      <section class="content-grid">
+        <article class="card">
+          <div class="card-header">
+            <h2>Đơn hàng cần xử lý</h2>
+            <a href="pages/orders.html" class="text-primary">Xem tất cả →</a>
+          </div>
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">Mã đơn</th>
+                  <th scope="col">Đối tác</th>
+                  <th scope="col">Trạng thái</th>
+                  <th scope="col">Thao tác</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><a href="pages/orders.html?search=IM-2026-128&edit=IM-2026-128" class="text-primary">IM-2026-128</a></td>
+                  <td><a href="pages/partners.html?search=Minh Phát" class="text-primary">Minh Phát Trading</a></td>
+                  <td><span class="badge badge-warning">Đang xử lý</span></td>
+                  <td><a href="pages/orders.html?search=IM-2026-128&edit=IM-2026-128" class="btn btn-secondary btn-sm">Sửa</a></td>
+                </tr>
+                <tr>
+                  <td><a href="pages/orders.html?search=IM-2026-127&edit=IM-2026-127" class="text-primary">IM-2026-127</a></td>
+                  <td><a href="pages/partners.html?search=East Asia" class="text-primary">East Asia Supply</a></td>
+                  <td><span class="badge badge-info">Đang vận chuyển</span></td>
+                  <td><a href="pages/orders.html?search=IM-2026-127&edit=IM-2026-127" class="btn btn-secondary btn-sm">Sửa</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-header">
+            <h2>Lô hàng mới nhất</h2>
+            <a href="pages/shipments.html" class="text-primary">Xem tất cả →</a>
+          </div>
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">Mã lô</th>
+                  <th scope="col">Mã đơn</th>
+                  <th scope="col">Trạng thái</th>
+                  <th scope="col">Thao tác</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><a href="pages/shipments.html?search=SH-2026-018&edit=SH-2026-018" class="text-primary">SH-2026-018</a></td>
+                  <td><a href="pages/orders.html?search=IM-2026-128&edit=IM-2026-128" class="text-primary">IM-2026-128</a></td>
+                  <td><span class="badge badge-danger">Chậm tiến độ</span></td>
+                  <td><a href="pages/shipments.html?search=SH-2026-018&edit=SH-2026-018" class="btn btn-secondary btn-sm">Chi tiết</a></td>
+                </tr>
+                <tr>
+                  <td><a href="pages/shipments.html?search=SH-2026-017&edit=SH-2026-017" class="text-primary">SH-2026-017</a></td>
+                  <td><a href="pages/orders.html?search=IM-2026-127&edit=IM-2026-127" class="text-primary">IM-2026-127</a></td>
+                  <td><span class="badge badge-info">Đang vận chuyển</span></td>
+                  <td><a href="pages/shipments.html?search=SH-2026-017&edit=SH-2026-017" class="btn btn-secondary btn-sm">Chi tiết</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+      </section>
+    </main>
+  </div>
+  <script src="js/app.js" defer></script>
+</body>
+</html>

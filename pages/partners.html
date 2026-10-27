@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quản lý đối tác | IMEX Manager</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="app-layout">
+    <aside class="sidebar">
+      <div class="logo">
+        <span class="logo-mark">IM</span>
+        <span>IMEX Manager</span>
+      </div>
+
+      <nav class="sidebar-nav" aria-label="Điều hướng chính">
+        <a href="../index.html"><span aria-hidden="true">▦</span> Dashboard</a>
+        <a href="orders.html"><span aria-hidden="true">▤</span> Quản lý đơn hàng</a>
+        <a href="shipments.html"><span aria-hidden="true">⇢</span> Quản lý lô hàng</a>
+        <a class="active" href="partners.html"><span aria-hidden="true">♧</span> Quản lý đối tác</a>
+        <a href="reports.html"><span aria-hidden="true">▥</span> Báo cáo & thống kê</a>
+      </nav>
+
+      <div class="divider"></div>
+      <a class="nav-link" href="../login.html"><span aria-hidden="true">↪</span> Đăng xuất</a>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div>
+          <strong>Quản lý đối tác</strong>
+          <p class="mb-0">Danh bạ khách hàng và nhà cung cấp</p>
+        </div>
+
+        <div class="user-profile">
+          <div class="avatar">AD</div>
+          <div>
+            <strong>Admin</strong>
+            <div class="muted">Quản trị viên</div>
+          </div>
+        </div>
+      </header>
+
+      <section class="page-header">
+        <div>
+          <h1>Đối tác</h1>
+          <p>Lưu trữ thông tin doanh nghiệp và người liên hệ phục vụ giao dịch.</p>
+        </div>
+        <a class="btn btn-primary" href="#partner-form">＋ Thêm đối tác</a>
+      </section>
+
+      <section class="card">
+        <div class="card-header">
+          <h2>Danh sách đối tác</h2>
+        </div>
+
+        <div class="toolbar">
+          <div class="search-box">
+            <input type="search" aria-label="Tìm đối tác" placeholder="Tìm theo mã hoặc tên doanh nghiệp...">
+          </div>
+
+          <select aria-label="Lọc loại đối tác">
+            <option value="">Tất cả loại đối tác</option>
+            <option value="customer">Khách hàng</option>
+            <option value="supplier">Nhà cung cấp</option>
+            <option value="both">Cả hai</option>
+          </select>
+
+          <button class="btn btn-secondary" type="button">Lọc</button>
+        </div>
+
+        <div class="table-container">
+          <table>
+            <caption class="sr-only">Danh sách đối tác doanh nghiệp</caption>
+            <thead>
+              <tr>
+                <th scope="col">Mã đối tác</th>
+                <th scope="col">Doanh nghiệp</th>
+                <th scope="col">Loại đối tác</th>
+                <th scope="col">Quốc gia</th>
+                <th scope="col">Người liên hệ</th>
+                <th scope="col">Email</th>
+                <th scope="col">Điện thoại</th>
+                <th scope="col">Thao tác</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>PT-001</td>
+                <td>
+                  <a href="orders.html?search=Minh Phát" class="text-primary">Minh Phát Trading</a>
+                </td>
+                <td><span class="badge badge-success">Khách hàng</span></td>
+                <td>Việt Nam</td>
+                <td>Nguyễn Minh</td>
+                <td>contact@minhphat.example</td>
+                <td>0900 123 456</td>
+                <td>
+                  <div class="actions">
+                    <button class="btn btn-secondary btn-sm" type="button">Xem</button>
+                    <button class="btn btn-secondary btn-sm" type="button">Sửa</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>PT-002</td>
+                <td>
+                  <a href="orders.html?search=East Asia" class="text-primary">East Asia Supply</a>
+                </td>
+                <td><span class="badge badge-warning">Nhà cung cấp</span></td>
+                <td>Hàn Quốc</td>
+                <td>Kim Jisoo</td>
+                <td>sales@eastasia.example</td>
+                <td>+82 2 1234 5678</td>
+                <td>
+                  <div class="actions">
+                    <button class="btn btn-secondary btn-sm" type="button">Xem</button>
+                    <button class="btn btn-secondary btn-sm" type="button">Sửa</button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="partner-form" class="form-card mt-2">
+        <div class="card-header">
+          <h2>Thông tin đối tác</h2>
+        </div>
+
+        <form action="#" method="post">
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="partner-code">Mã đối tác</label>
+              <input id="partner-code" name="partner-code" placeholder="VD: PT-005" required>
+            </div>
+
+            <div class="form-group">
+              <label for="company">Tên doanh nghiệp</label>
+              <input id="company" name="company" placeholder="Tên doanh nghiệp" required>
+            </div>
+
+            <div class="form-group">
+              <label for="partner-type">Loại đối tác</label>
+              <select id="partner-type" name="partner-type">
+                <option value="Khách hàng">Khách hàng</option>
+                <option value="Nhà cung cấp">Nhà cung cấp</option>
+                <option value="Cả hai">Cả hai</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="partner-country">Quốc gia</label>
+              <input id="partner-country" name="partner-country" placeholder="Quốc gia" required>
+            </div>
+
+            <div class="form-group">
+              <label for="contact-name">Người liên hệ</label>
+              <input id="contact-name" name="contact-name" placeholder="Họ và tên">
+            </div>
+
+            <div class="form-group">
+              <label for="partner-email">Email</label>
+              <input id="partner-email" name="partner-email" type="email" placeholder="name@company.com" required>
+            </div>
+
+            <div class="form-group">
+              <label for="partner-phone">Số điện thoại</label>
+              <input id="partner-phone" name="partner-phone" type="tel" placeholder="Số điện thoại">
+            </div>
+
+            <div class="form-group">
+              <label for="partner-address">Địa chỉ</label>
+              <input id="partner-address" name="partner-address" placeholder="Địa chỉ doanh nghiệp">
+            </div>
+          </div>
+
+          <div class="form-group mt-1">
+            <label for="partner-notes">Ghi chú</label>
+            <textarea id="partner-notes" name="partner-notes" placeholder="Thông tin bổ sung"></textarea>
+          </div>
+
+          <div class="form-actions">
+            <button class="btn btn-secondary" type="reset">Xóa biểu mẫu</button>
+            <button class="btn btn-primary" type="submit">Lưu đối tác</button>
+          </div>
+        </form>
+      </section>
+    </main>
+  </div>
+  <script src="../js/app.js" defer></script>
+</body>
+</html>

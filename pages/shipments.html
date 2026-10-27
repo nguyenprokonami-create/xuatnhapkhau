@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quản lý lô hàng | IMEX Manager</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="app-layout">
+    <aside class="sidebar">
+      <div class="logo">
+        <span class="logo-mark">IM</span>
+        <span>IMEX Manager</span>
+      </div>
+
+      <nav class="sidebar-nav" aria-label="Điều hướng chính">
+        <a href="../index.html"><span aria-hidden="true">▦</span> Dashboard</a>
+        <a href="orders.html"><span aria-hidden="true">▤</span> Quản lý đơn hàng</a>
+        <a class="active" href="shipments.html"><span aria-hidden="true">⇢</span> Quản lý lô hàng</a>
+        <a href="partners.html"><span aria-hidden="true">♧</span> Quản lý đối tác</a>
+        <a href="reports.html"><span aria-hidden="true">▥</span> Báo cáo & thống kê</a>
+      </nav>
+
+      <div class="divider"></div>
+      <a class="nav-link" href="../login.html"><span aria-hidden="true">↪</span> Đăng xuất</a>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div>
+          <strong>Quản lý lô hàng</strong>
+          <p class="mb-0">Theo dõi hành trình vận chuyển và tình trạng giao hàng</p>
+        </div>
+
+        <div class="user-profile">
+          <div class="avatar">AD</div>
+          <div>
+            <strong>Admin</strong>
+            <div class="muted">Quản trị viên</div>
+          </div>
+        </div>
+      </header>
+
+      <section class="page-header">
+        <div>
+          <h1>Lô hàng & vận chuyển</h1>
+          <p>Quản lý thông tin vận chuyển và các mốc hành trình của lô hàng.</p>
+        </div>
+        <a class="btn btn-primary" href="#shipment-form">＋ Thêm lô hàng</a>
+      </section>
+
+      <section class="card">
+        <div class="card-header">
+          <h2>Danh sách lô hàng</h2>
+        </div>
+
+        <div class="toolbar">
+          <div class="search-box">
+            <input type="search" aria-label="Tìm lô hàng" placeholder="Tìm mã lô hoặc mã đơn hàng...">
+          </div>
+
+          <select aria-label="Lọc trạng thái">
+            <option value="">Tất cả trạng thái</option>
+            <option value="pending">Chờ lấy hàng</option>
+            <option value="in_transit">Đang vận chuyển</option>
+            <option value="delivered">Đã giao hàng</option>
+            <option value="delayed">Chậm tiến độ</option>
+          </select>
+
+          <button class="btn btn-secondary" type="button">Lọc</button>
+        </div>
+
+        <div class="table-container">
+          <table>
+            <caption class="sr-only">Danh sách lô hàng đang vận chuyển</caption>
+            <thead>
+              <tr>
+                <th scope="col">Mã lô</th>
+                <th scope="col">Mã đơn</th>
+                <th scope="col">Hành trình</th>
+                <th scope="col">Đơn vị vận chuyển</th>
+                <th scope="col">Dự kiến đến</th>
+                <th scope="col">Trạng thái</th>
+                <th scope="col">Thao tác</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>SH-2026-018</td>
+                <td><a href="orders.html?search=IM-2026-128&edit=IM-2026-128" class="text-primary">IM-2026-128</a></td>
+                <td>Yokohama → Hải Phòng</td>
+                <td>Ocean Link</td>
+                <td>24/10/2026</td>
+                <td><span class="badge badge-danger">Chậm tiến độ</span></td>
+                <td>
+                  <a class="btn btn-secondary btn-sm" href="shipments.html?search=SH-2026-018&edit=SH-2026-018">Chi tiết</a>
+                </td>
+              </tr>
+              <tr>
+                <td>SH-2026-017</td>
+                <td><a href="orders.html?search=IM-2026-127&edit=IM-2026-127" class="text-primary">IM-2026-127</a></td>
+                <td>Busan → Cát Lái</td>
+                <td>East Sea Logistics</td>
+                <td>27/10/2026</td>
+                <td><span class="badge badge-info">Đang vận chuyển</span></td>
+                <td>
+                  <a class="btn btn-secondary btn-sm" href="shipments.html?search=SH-2026-017&edit=SH-2026-017">Chi tiết</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="shipment-form" class="form-card mt-2">
+        <div class="card-header">
+          <h2>Thông tin lô hàng</h2>
+        </div>
+
+        <form action="#" method="post">
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="shipment-code">Mã lô hàng</label>
+              <input id="shipment-code" name="shipment-code" placeholder="VD: SH-2026-019" required>
+            </div>
+
+            <div class="form-group">
+              <label for="related-order">Mã đơn hàng liên quan</label>
+              <input id="related-order" name="related-order" placeholder="VD: IM-2026-129" required>
+            </div>
+
+            <div class="form-group">
+              <label for="origin">Địa điểm xuất phát</label>
+              <input id="origin" name="origin" placeholder="Cảng / địa điểm xuất phát" required>
+            </div>
+
+            <div class="form-group">
+              <label for="destination">Địa điểm đích</label>
+              <input id="destination" name="destination" placeholder="Cảng / địa điểm đích" required>
+            </div>
+
+            <div class="form-group">
+              <label for="departure">Ngày khởi hành dự kiến</label>
+              <input id="departure" name="departure" type="date">
+            </div>
+
+            <div class="form-group">
+              <label for="arrival">Ngày đến dự kiến</label>
+              <input id="arrival" name="arrival" type="date">
+            </div>
+
+            <div class="form-group">
+              <label for="carrier">Đơn vị vận chuyển</label>
+              <input id="carrier" name="carrier" placeholder="Tên đơn vị vận chuyển">
+            </div>
+
+            <div class="form-group">
+              <label for="shipment-status">Trạng thái</label>
+              <select id="shipment-status" name="shipment-status">
+                <option value="Chờ lấy hàng">Chờ lấy hàng</option>
+                <option value="Đang vận chuyển">Đang vận chuyển</option>
+                <option value="Đã giao hàng">Đã giao hàng</option>
+                <option value="Chậm tiến độ">Chậm tiến độ</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-actions mt-1">
+            <button class="btn btn-secondary" type="reset">Xóa biểu mẫu</button>
+            <button class="btn btn-primary" type="submit">Lưu lô hàng</button>
+          </div>
+        </form>
+      </section>
+    </main>
+  </div>
+  <script src="../js/app.js" defer></script>
+</body>
+</html>

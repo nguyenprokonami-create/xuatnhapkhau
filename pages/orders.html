@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quản lý đơn hàng | IMEX Manager</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="app-layout">
+    <aside class="sidebar">
+      <div class="logo">
+        <span class="logo-mark">IM</span>
+        <span>IMEX Manager</span>
+      </div>
+
+      <nav class="sidebar-nav" aria-label="Điều hướng chính">
+        <a href="../index.html"><span aria-hidden="true">▦</span> Dashboard</a>
+        <a class="active" href="orders.html"><span aria-hidden="true">▤</span> Quản lý đơn hàng</a>
+        <a href="shipments.html"><span aria-hidden="true">⇢</span> Quản lý lô hàng</a>
+        <a href="partners.html"><span aria-hidden="true">♧</span> Quản lý đối tác</a>
+        <a href="reports.html"><span aria-hidden="true">▥</span> Báo cáo & thống kê</a>
+      </nav>
+
+      <div class="divider"></div>
+      <a class="nav-link" href="../login.html"><span aria-hidden="true">↪</span> Đăng xuất</a>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <div>
+          <strong>Quản lý đơn hàng</strong>
+          <p class="mb-0">Danh sách và theo dõi tình trạng xử lý đơn xuất nhập khẩu</p>
+        </div>
+
+        <div class="user-profile">
+          <div class="avatar">AD</div>
+          <div>
+            <strong>Admin</strong>
+            <div class="muted">Quản trị viên</div>
+          </div>
+        </div>
+      </header>
+
+      <section class="page-header">
+        <div>
+          <h1>Đơn hàng</h1>
+          <p>Quản lý toàn bộ danh sách đơn hàng xuất khẩu và nhập khẩu.</p>
+        </div>
+        <a class="btn btn-primary" href="#order-form">＋ Tạo đơn hàng</a>
+      </section>
+
+      <section class="card">
+        <div class="card-header">
+          <h2>Danh sách đơn hàng</h2>
+        </div>
+
+        <div class="toolbar">
+          <div class="search-box">
+            <input type="search" aria-label="Tìm đơn hàng" placeholder="Tìm theo mã đơn, đối tác...">
+          </div>
+
+          <select aria-label="Lọc loại đơn">
+            <option value="">Tất cả loại đơn</option>
+            <option value="export">Xuất khẩu</option>
+            <option value="import">Nhập khẩu</option>
+          </select>
+
+          <select aria-label="Lọc trạng thái">
+            <option value="">Tất cả trạng thái</option>
+            <option value="new">Mới tạo</option>
+            <option value="processing">Đang xử lý</option>
+            <option value="shipping">Đang vận chuyển</option>
+            <option value="completed">Hoàn thành</option>
+            <option value="cancelled">Đã hủy</option>
+          </select>
+
+          <button class="btn btn-secondary" type="button">Lọc</button>
+        </div>
+
+        <div class="table-container">
+          <table>
+            <caption class="sr-only">Danh sách các đơn hàng xuất nhập khẩu</caption>
+            <thead>
+              <tr>
+                <th scope="col">Mã đơn</th>
+                <th scope="col">Loại</th>
+                <th scope="col">Đối tác</th>
+                <th scope="col">Quốc gia</th>
+                <th scope="col">Ngày tạo</th>
+                <th scope="col">Giá trị</th>
+                <th scope="col">Trạng thái</th>
+                <th scope="col">Thao tác</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><a href="shipments.html?search=IM-2026-128" class="text-primary">IM-2026-128</a></td>
+                <td>Nhập khẩu</td>
+                <td><a href="partners.html?search=Minh Phát&edit=PT-001" class="text-primary">Minh Phát Trading</a></td>
+                <td>Nhật Bản</td>
+                <td>18/10/2026</td>
+                <td>450.000.000 ₫</td>
+                <td><span class="badge badge-warning">Đang xử lý</span></td>
+                <td>
+                  <div class="actions">
+                    <button class="btn btn-secondary btn-sm" type="button">Xem</button>
+                    <button class="btn btn-secondary btn-sm" type="button">Sửa</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td><a href="shipments.html?search=IM-2026-127" class="text-primary">IM-2026-127</a></td>
+                <td>Xuất khẩu</td>
+                <td><a href="partners.html?search=East Asia&edit=PT-002" class="text-primary">East Asia Supply</a></td>
+                <td>Hàn Quốc</td>
+                <td>15/10/2026</td>
+                <td>1.200.000.000 ₫</td>
+                <td><span class="badge badge-info">Đang vận chuyển</span></td>
+                <td>
+                  <div class="actions">
+                    <button class="btn btn-secondary btn-sm" type="button">Xem</button>
+                    <button class="btn btn-secondary btn-sm" type="button">Sửa</button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="order-form" class="form-card mt-2">
+        <div class="card-header">
+          <h2>Thông tin đơn hàng</h2>
+        </div>
+
+        <form action="#" method="post">
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="order-code">Mã đơn hàng</label>
+              <input id="order-code" name="order-code" placeholder="VD: IM-2026-129" required>
+            </div>
+
+            <div class="form-group">
+              <label for="order-type">Loại đơn hàng</label>
+              <select id="order-type" name="order-type">
+                <option value="Xuất khẩu">Xuất khẩu</option>
+                <option value="Nhập khẩu">Nhập khẩu</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="partner">Đối tác</label>
+              <input id="partner" name="partner" placeholder="Tên doanh nghiệp đối tác" required>
+            </div>
+
+            <div class="form-group">
+              <label for="country">Quốc gia</label>
+              <input id="country" name="country" placeholder="Quốc gia" required>
+            </div>
+
+            <div class="form-group">
+              <label for="created-date">Ngày tạo</label>
+              <input id="created-date" name="created-date" type="date">
+            </div>
+
+            <div class="form-group">
+              <label for="order-value">Giá trị đơn hàng (VNĐ)</label>
+              <input id="order-value" name="order-value" type="number" placeholder="VD: 500000000">
+            </div>
+
+            <div class="form-group">
+              <label for="order-status">Trạng thái</label>
+              <select id="order-status" name="order-status">
+                <option value="Mới tạo">Mới tạo</option>
+                <option value="Đang xử lý">Đang xử lý</option>
+                <option value="Đang vận chuyển">Đang vận chuyển</option>
+                <option value="Hoàn thành">Hoàn thành</option>
+                <option value="Đã hủy">Đã hủy</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-actions mt-1">
+            <button class="btn btn-secondary" type="reset">Xóa biểu mẫu</button>
+            <button class="btn btn-primary" type="submit">Lưu đơn hàng</button>
+          </div>
+        </form>
+      </section>
+    </main>
+  </div>
+  <script src="../js/app.js" defer></script>
+</body>
+</html
